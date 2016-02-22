@@ -33,3 +33,46 @@ default device respectively.
 
 \fexample{device}{3f}
 
+\section{Target Memory and Device Pointers}
+\label{sec:target_memory_and_device_pointers}
+
+\section{\code{use\_deviceptr()} and \code{is\_deviceptr()}}
+
+The following example shows how the \code{use\_deviceptr()} clause can be used
+to get a pointer to device memory, and how \code{is\_deviceptr()} can be used
+to pass such a pointer into a region. 
+
+\cexample{device}{4c}
+
+% \fexample{device}{4f}
+
+\section{\code{omp\_target\_alloc()}, \code{omp\_target\_memcpy()}, and
+    \code{omp\_target\_free()}}
+
+The following example shows how allocate, copy and free memory explicitly
+between the host device memory space and device space.  These routines allow
+separate buffers to be created and used for the device without
+requiring an extra explicit host buffer, or the reuse of a single buffer
+allocation to represent different memory locations as in this example.
+
+\cexample{device}{5c}
+
+\section{\code{omp\_associate\_ptr()} and \code{omp\_disassociate\_ptr()}}
+
+The following example shows how allocate, copy and free memory explicitly
+between the host device memory space and device space.  These routines allow
+separate buffers to be created and used for the device without
+requiring an extra explicit host buffer, or the reuse of a single buffer
+allocation to represent different memory locations as in this example.
+
+\cexample{device}{6c}
+
+\section{\code{omp\_target\_memcpy\_rect()}}
+
+The following example shows how to use \code{omp\_target\_memcpy\_rect()} to
+update non-contiguous subsections of matrices between the host and device.
+This is useful for halo exchanges, creating dense matrices from subsets of a
+larger dense matrix, or generally copying shaped data.
+
+\cexample{device}{7c}
+
